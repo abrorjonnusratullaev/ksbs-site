@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <title>SAT · Qarshi 1-son IMI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@600;700&family=Golos+Text:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .sat-links{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+    .sat-link{display:grid;gap:4px;padding:18px 20px;border:1px solid var(--line);border-radius:var(--r);text-decoration:none;color:var(--ink);background:var(--paper)}
+    .sat-link:hover{border-color:var(--blue)}
+    .sat-link b{font-weight:600}
+    .sat-link span{color:var(--ink-2);font-size:14px}
+    .back{display:inline-block;margin-bottom:24px;font-weight:600;text-decoration:none}
+  </style>
+</head>
+<body>
+  <!-- YASHIRIN SAHIFA: menyuda ko'rinmaydi. Ochish uchun data/school.json da "show_sat": true qiling. -->
+  <main class="section">
+    <div class="wrap">
+      <a class="back" href="index.html" data-uz="← Bosh sahifa" data-en="← Home">← Bosh sahifa</a>
+      <div class="head-row">
+        <h2>SAT</h2>
+        <div class="lang" role="group" aria-label="Til / Language">
+          <button type="button" id="lang-uz" data-lang="uz">O'zb</button>
+          <button type="button" id="lang-en" data-lang="en">Eng</button>
+        </div>
+      </div>
+      <p class="muted" style="max-width:60ch;margin-bottom:32px" data-uz="SAT imtihoni bo'yicha rasmiy manbalar. Ro'yxatdan o'tish va natijalar faqat College Board sayti orqali amalga oshiriladi." data-en="Official SAT resources. Registration and scores are handled only through the College Board website.">SAT imtihoni bo'yicha rasmiy manbalar.</p>
+      <div class="sat-links">
+        <a class="sat-link" href="https://satsuite.collegeboard.org/sat/registration" target="_blank" rel="noopener"><b data-uz="Ro'yxatdan o'tish" data-en="Register">Ro'yxatdan o'tish</b><span>College Board ↗</span></a>
+        <a class="sat-link" href="https://satsuite.collegeboard.org/sat/dates-deadlines" target="_blank" rel="noopener"><b data-uz="Imtihon sanalari va muddatlar" data-en="Test dates and deadlines">Imtihon sanalari va muddatlar</b><span>College Board ↗</span></a>
+        <a class="sat-link" href="https://bluebook.collegeboard.org" target="_blank" rel="noopener"><b data-uz="Bluebook ilovasi" data-en="Bluebook app">Bluebook ilovasi</b><span data-uz="Imtihon shu ilovada topshiriladi ↗" data-en="The test is taken in this app ↗">Imtihon shu ilovada topshiriladi ↗</span></a>
+        <a class="sat-link" href="https://satsuite.collegeboard.org/practice" target="_blank" rel="noopener"><b data-uz="Rasmiy mashq testlari" data-en="Official practice tests">Rasmiy mashq testlari</b><span>College Board ↗</span></a>
+        <a class="sat-link" href="https://www.khanacademy.org/digital-sat" target="_blank" rel="noopener"><b data-uz="Bepul tayyorgarlik" data-en="Free preparation">Bepul tayyorgarlik</b><span>Khan Academy ↗</span></a>
+        <a class="sat-link" href="https://studentscores.collegeboard.org" target="_blank" rel="noopener"><b data-uz="Natijalarni ko'rish" data-en="View scores">Natijalarni ko'rish</b><span>College Board ↗</span></a>
+      </div>
+    </div>
+  </main>
+  <script>
+    let lang = "uz";
+    try { lang = localStorage.getItem("lang") || lang; } catch (e) {}
+    function setLang(l) {
+      lang = l; document.documentElement.lang = l;
+      document.querySelectorAll("[data-uz]").forEach(el => el.textContent = el.dataset[l]);
+      document.querySelectorAll(".lang button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.lang === l)));
+      try { localStorage.setItem("lang", l); } catch (e) {}
+    }
+    document.querySelectorAll(".lang button").forEach(b => b.addEventListener("click", () => setLang(b.dataset.lang)));
+    setLang(lang);
+  </script>
+</body>
+</html>
