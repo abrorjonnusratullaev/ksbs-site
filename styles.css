@@ -447,3 +447,10 @@ section[id]{scroll-margin-top:96px}
 h2{padding-bottom:0;margin-bottom:28px}
 h2::after{display:none}
 .leader .avatar{color:var(--blue)}
+/* Rahbariyat: ikki karta yonma-yon, kattaroq surat */
+#leader-list{grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr))}
+#leader-list .leader:first-child{grid-column:auto}
+#leader-list .leader:first-child h4{font-size:1.12rem}
+#leader-list .leader{grid-template-columns:112px minmax(0,1fr);padding:22px 24px}
+#leader-list .leader .avatar{width:112px;height:112px}
+@media (max-width:560px){#leader-list .leader{grid-template-columns:84px minmax(0,1fr)}#leader-list .leader .avatar{width:84px;height:84px}}

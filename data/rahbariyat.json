@@ -1,37 +1,12 @@
 [
   {
-    "rasm": "",
+    "rasm": "oripova-nozima.jpg",
     "uz": {"ism": "Oripova Nozima", "lavozim": "Maktab direktori", "malumot": "Qarshi davlat universiteti (Biologiya)"},
     "en": {"ism": "Nozima Oripova", "lavozim": "School Director", "malumot": "Karshi State University (Biology)"}
   },
   {
-    "rasm": "",
-    "uz": {"ism": "Ismatov Xabibjon Muzaffarovich", "lavozim": "O'quv ishlari bo'yicha direktor o'rinbosari", "malumot": "Qarshi davlat universiteti, Tarix fakulteti (kunduzgi)"},
-    "en": {"ism": "Ismatov Khabibjon Muzaffarovich", "lavozim": "Deputy Director for Academic Affairs", "malumot": "Karshi State University, Faculty of History (full-time)"}
-  },
-  {
-    "rasm": "",
+    "rasm": "shodmonov-oktam.jpg",
     "uz": {"ism": "Shodmonov O'ktam Rustamovich", "lavozim": "Ma'naviy ishlar bo'yicha direktor o'rinbosari", "malumot": "Mirzo Ulug'bek nomidagi O'zbekiston Milliy universiteti, Tarix (mamlakatlar va mintaqalar bo'yicha)"},
     "en": {"ism": "Shodmanov Oktam Rustamovich", "lavozim": "Deputy Director for Spiritual Affairs", "malumot": "M. Ulugbek National University of Uzbekistan, History (by countries and regions)"}
-  },
-  {
-    "rasm": "",
-    "uz": {"ism": "Yusupov Jahongir Otabek o'g'li", "lavozim": "Ma'muriy-xo'jalik ishlari bo'yicha direktor o'rinbosari", "malumot": "Qarshi olimpiya zaxiralari sport kolleji"},
-    "en": {"ism": "Yusupov Jahongir Otabek o'g'li", "lavozim": "Deputy Director for Administrative and Economic Affairs", "malumot": "Karshi Olympic Reserve Sports College"}
-  },
-  {
-    "rasm": "",
-    "uz": {"ism": "Nuraliyev Akbar Shaymardonovich", "lavozim": "Kadrlar bo'yicha menejer", "malumot": "Toshkent davlat iqtisodiyot universiteti"},
-    "en": {"ism": "Nuraliyev Akbar Shaymardonovich", "lavozim": "Human Resources Manager", "malumot": "Tashkent State University of Economics"}
-  },
-  {
-    "rasm": "",
-    "uz": {"ism": "Xayrullayev Jahongir", "lavozim": "Maktab maslahatchisi", "malumot": "BPP universiteti, London, Buyuk Britaniya"},
-    "en": {"ism": "Khayrullaev Jakhongir", "lavozim": "School Counselor", "malumot": "BPP University, London, UK"}
-  },
-  {
-    "rasm": "",
-    "uz": {"ism": "Husanov Islom Husan o'g'li", "lavozim": "Bosh hisobchi", "malumot": "Qarshi davlat universiteti"},
-    "en": {"ism": "Husanov Islom Husan o'g'li", "lavozim": "Chief Accountant", "malumot": "Karshi State University"}
   }
 ]
