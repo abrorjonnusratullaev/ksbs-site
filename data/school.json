@@ -25,7 +25,7 @@
   "address": "Qarshi shahri, I. Karimov ko'chasi, 25-uy",
   "hours": "Dushanba – Juma: 08:00 – 17:00",
   "about": "Qarshi shahar 1-son ixtisoslashtirilgan maktab-internati aniq fanlar yo'nalishidagi fanlarni chuqurlashtirib o'qitadi.",
-  "life": "Maktabimiz al-Xorazmiy, Abu Rayhon Beruniy kabi buyuk bobokalonlarimiz davomchilarini yetishtirish va aniq fanlar yo'nalishidagi iqtidorlarni aniqlashga qaratilgan.",
+  "life": "Maktabimiz al-Xorazmiy, Abu Rayhon Beruniy kabi buyuk ajdodlarimizning munosib davomchilarini tarbiyalash va aniq fanlar bo'yicha iqtidorli o'quvchilarni aniqlashni maqsad qilgan.",
   "subjects": [
    "Ingliz tili",
    "Matematika",
@@ -35,43 +35,43 @@
   ],
   "perks": [
    "Uzoq hududlardan kelgan o'quvchilar uchun bepul zamonaviy yotoqxona",
-   "Kuniga 5 mahal bepul ovqat (yotoqxonada yashovchilar uchun)",
+   "Kuniga 5 mahal bepul ovqatlanish (yotoqxonada yashovchi o'quvchilar uchun)",
    "Bir nechta to'garaklarga bepul qatnashish",
    "Turli sport tadbirlarida ishtirok etish",
    "Maktab formasi beriladi (xarajatning bir qismini ota-onalar to'laydi)",
-   "Matematika, fizika, ingliz tili, tarix, biologiya va kimyo chuqurlashtirilgan",
-   "Yuqori sifatli optik internet",
+   "Matematika, fizika, ingliz tili, tarix, biologiya va kimyo fanlari chuqurlashtirib o'qitiladi",
+   "Yuqori tezlikdagi optik internet",
    "Darsliklar bilan ta'minlanadi",
    "SAT va IELTS imtihonlariga ixtisoslashgan o'qituvchilar tayyorlaydi",
    "Zamonaviy, keng kutubxona",
    "Zamonaviy bilimga ega yuqori malakali o'qituvchilar",
-   "O'qishda yuqori natija va xalqaro sertifikatga ega o'quvchilar O'zbekiston va xorijdagi oliygohlarga muddatidan oldin kirish imkoniga ega",
+   "O'qishda yuqori natijalarga erishgan va xalqaro sertifikatga ega o'quvchilar O'zbekiston va xorijdagi oliy ta'lim muassasalariga muddatidan oldin kirish imkoniga ega",
    "Hozirgacha barcha bitiruvchilarimiz talabalik baxtiga muyassar bo'lgan"
   ],
   "admission": {
    "grades": "5-sinf — aniq fanlar yo'nalishi; 7-sinf — tabiiy fanlar yo'nalishi",
-   "period": "Odatda 10-iyundan 30-iyungacha, ariza.piima.uz orqali onlayn",
+   "period": "Odatda 10-iyundan 30-iyungacha ariza.piima.uz sayti orqali onlayn qabul qilinadi",
    "docs": [
     "Tug'ilganlik haqida guvohnoma",
-    "3x4 sm rasm",
-    "Ota-ona (vasiy) pasport ma'lumotlari va doimiy ishlaydigan telefon raqamlari"
+    "3×4 sm o'lchamdagi rasm",
+    "Ota-onaning (vasiyning) pasport ma'lumotlari va doimiy ishlaydigan telefon raqamlari"
    ]
   },
   "about_items": [
    {
     "icon": "atom",
     "title": "Aniq fanlarga ixtisoslashgan maktab",
-    "text": "Qarshi shahar 1-son ixtisoslashtirilgan maktab-internati aniq fanlar yo'nalishidagi fanlarni chuqurlashtirib o'qitadi."
+    "text": "Prezident ta'lim muassasalari agentligi tizimidagi Qarshi shahar 1-son ixtisoslashtirilgan maktab-internati O'zbekiston Respublikasi Prezidentining 2022-yil 14-apreldagi PF-106-son “Prezident ta'lim muassasalari agentligi tizimidagi ixtisoslashtirilgan maktablar tarmog'ini kengaytirish to'g'risida”gi Farmoniga muvofiq tashkil etilgan. Maktab aniq fanlarni chuqurlashtirib o'qitishga ixtisoslashgan."
    },
    {
     "icon": "students",
     "title": "Maktab hayoti",
-    "text": "Maktabimiz al-Xorazmiy, Abu Rayhon Beruniy kabi buyuk bobokalonlarimiz davomchilarini yetishtirish va aniq fanlar yo'nalishidagi iqtidorlarni aniqlashga qaratilgan."
+    "text": "Maktabimiz al-Xorazmiy, Abu Rayhon Beruniy kabi buyuk ajdodlarimizning munosib davomchilarini tarbiyalash va aniq fanlar bo'yicha iqtidorli o'quvchilarni aniqlashni maqsad qilgan."
    },
    {
     "icon": "cert",
     "title": "Malakali o'qituvchilar",
-    "text": "O'qituvchilarimiz xalqaro darajadagi sertifikatlarni olib, bilimini oshiradi va bu tajribani o'quvchilarga yetkazadi."
+    "text": "O'qituvchilarimiz xalqaro sertifikatlarni olib, bilimlarini oshiradi va bu tajribani o'quvchilarimizga yetkazadi."
    }
   ]
  },
@@ -85,7 +85,7 @@
   "address": "25 I. Karimov Street, Karshi",
   "hours": "Monday – Friday: 08:00 – 17:00",
   "about": "Karshi City Specialized Boarding School No. 1 offers advanced teaching in the exact sciences.",
-  "life": "Our school aims to raise successors to great ancestors such as Al-Khwarizmi and Abu Rayhan Biruni, and to identify talent in the exact sciences.",
+  "life": "Our school aims to raise worthy successors to great scholars such as al-Khwarizmi and Abu Rayhan Biruni, and to discover talented students in the exact sciences.",
   "subjects": [
    "English",
    "Mathematics",
@@ -99,39 +99,39 @@
    "Free access to several clubs",
    "Various sports activities",
    "School uniform provided (parents cover part of the cost)",
-   "Advanced mathematics, physics, English, history, biology and chemistry",
-   "High-speed fiber internet",
+   "In-depth study of mathematics, physics, English, history, biology and chemistry",
+   "High-speed fiber-optic internet",
    "Textbooks provided",
-   "Specialized teachers prepare students for SAT and IELTS",
+   "Specialist teachers prepare students for the SAT and IELTS",
    "A modern, spacious library",
    "Highly qualified teachers with modern expertise",
-   "Students with top results and international certificates can gain early admission to universities in Uzbekistan and abroad",
+   "Students with outstanding results and international certificates can gain early admission to universities in Uzbekistan and abroad",
    "To date, every one of our graduates has been admitted to university"
   ],
   "admission": {
    "grades": "Grade 5 — exact sciences; grade 7 — natural sciences",
-   "period": "Usually June 10 – June 30, online at ariza.piima.uz",
+   "period": "Usually from June 10 to June 30, online at ariza.piima.uz",
    "docs": [
     "Birth certificate",
-    "3x4 cm photo",
-    "Parent/guardian passport details and active phone numbers"
+    "3×4 cm photo",
+    "Parent's or guardian's passport details and working phone numbers"
    ]
   },
   "about_items": [
    {
     "icon": "atom",
     "title": "Specialized in the exact sciences",
-    "text": "Karshi City Specialized Boarding School No. 1 offers advanced teaching in the exact sciences."
+    "text": "Karshi City Specialized Boarding School No. 1, part of the Agency of Presidential Educational Institutions, was established under Decree No. PF-106 of the President of the Republic of Uzbekistan of April 14, 2022, “On expanding the network of specialized schools within the Agency of Presidential Educational Institutions”. The school specializes in in-depth teaching of the exact sciences."
    },
    {
     "icon": "students",
     "title": "School life",
-    "text": "Our school aims to raise successors to great ancestors such as Al-Khwarizmi and Abu Rayhan Biruni, and to identify talent in the exact sciences."
+    "text": "Our school aims to raise worthy successors to great scholars such as al-Khwarizmi and Abu Rayhan Biruni, and to discover talented students in the exact sciences."
    },
    {
     "icon": "cert",
     "title": "Qualified teachers",
-    "text": "Our teachers enhance their knowledge by obtaining global-level certificates and pass this expertise on to our students."
+    "text": "Our teachers keep improving their skills by earning international certificates, and they pass this expertise on to our students."
    }
   ]
  },
