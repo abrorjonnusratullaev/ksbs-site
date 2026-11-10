@@ -439,3 +439,10 @@ section[id]{scroll-margin-top:96px}
 .leader p{margin:0;color:var(--ink-2);font-size:14.5px;line-height:1.5}
 @media (max-width:560px){.leaders{grid-template-columns:minmax(0,1fr)}.leader{grid-template-columns:60px minmax(0,1fr);padding:16px}.leader .avatar{width:60px;height:60px;font-size:1.2rem}}
 #leader-list .leader:first-child .avatar{background:var(--paper)}
+
+/* To'lqinlar olib tashlandi: bo'limlar faqat fon rangi bilan ajraladi */
+.section.alt::before,.section.alt::after,.hero::after,.footer::before,.map-band::before{display:none}
+.section.alt + .section{padding-top:72px}
+@media (max-width:980px){.section.alt + .section{padding-top:56px}}
+h2{padding-bottom:0;margin-bottom:28px}
+h2::after{display:none}
