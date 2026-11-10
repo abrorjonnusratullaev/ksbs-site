@@ -1,0 +1,16 @@
+name: Ma'lumot fayllarini tekshirish
+# data/ papkasidagi fayllarda xato bo'lsa (vergul, qo'shtirnoq), GitHub egasiga xat yuboradi.
+on:
+  push:
+    paths: ["data/**"]
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: JSON fayllarni tekshirish
+        run: |
+          for f in data/*.json; do
+            python3 -m json.tool "$f" > /dev/null || { echo "::error file=$f::$f faylida xato bor"; exit 1; }
+          done
+          echo "Hammasi to'g'ri."

@@ -1,4 +1,4 @@
-// Interfeys matnlari. Maktab ma'lumotlari: data/school.json, yangiliklar: data/news.json
+// Interfeys matnlari. Maktab ma'lumotlari: data/school.json, rahbariyat: data/rahbariyat.json, o'qituvchilar: data/oqituvchilar.json, yangiliklar: data/news.json
 const UI = {
   uz: {
     "nav.about": "Maktab haqida", "nav.teachers": "O'qituvchilar", "nav.news": "Yangiliklar", "nav.contact": "Aloqa",
@@ -39,7 +39,7 @@ const ICONS = {
 
 let lang = /^(uz|ru)/i.test(navigator.language || "uz") ? "uz" : "en";
 try { lang = localStorage.getItem("lang") || lang; } catch (e) {}
-let school = null, news = [];
+let school = null, news = [], leaders = [], teachers = [];
 
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -60,10 +60,11 @@ function teacherHTML(t) {
 }
 
 function leaderHTML(t) {
-  const L = t[lang] || t.uz || {};
-  const pic = t.photo ? `<img src="${esc(t.photo)}" alt="${esc(L.name)}" loading="lazy">` : esc(initials(L.name || ""));
-  return `<article class="leader"><div class="avatar">${pic}</div><div><div class="role">${esc(L.role || "")}</div>
-    <h4>${esc(L.name || "")}</h4>${L.edu ? `<p>${esc(L.edu)}</p>` : ""}</div></article>`;
+  const L = t[lang] || t.uz || {}, name = L.ism || "";
+  const src = t.rasm ? (t.rasm.includes("/") ? t.rasm : "assets/odamlar/" + t.rasm) : "";
+  const pic = src ? `<img src="${esc(src)}" alt="${esc(name)}" loading="lazy">` : esc(initials(name));
+  return `<article class="leader"><div class="avatar">${pic}</div><div><div class="role">${esc(L.lavozim || "")}</div>
+    <h4>${esc(name)}</h4>${L.malumot ? `<p>${esc(L.malumot)}</p>` : ""}</div></article>`;
 }
 
 function postHTML(n) {
@@ -108,16 +109,19 @@ function render() {
     [u["adm.docs"], `<ul>${(A.docs || []).map(d => `<li>${esc(d)}</li>`).join("")}</ul>`]]
     .map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join("");
   if (!school.intro_video) $("#video-box").innerHTML = `<div class="video-ph"><span class="play"></span><span>${u["video.soon"]}</span></div>`;
-  const LD = school.leadership || [];
+  const LD = leaders;
   $("#leadership").hidden = !LD.length;
   $("#leader-list").innerHTML = LD.map(leaderHTML).join("");
-  $("#teacher-list").innerHTML = school.teachers.length ? school.teachers.map(teacherHTML).join("") : `<p class="empty">${u["teachers.empty"]}</p>`;
+  $("#teacher-list").innerHTML = teachers.length ? teachers.map(leaderHTML).join("") : `<p class="empty">${u["teachers.empty"]}</p>`;
   $("#contact-list").innerHTML = contactRows(S, u);
 }
 
 async function init() {
   $("#year").textContent = new Date().getFullYear();
   try { school = await fetch("data/school.json").then(r => r.json()); } catch (e) { school = null; }
+  // Har bir ro'yxat alohida faylda: birida xato bo'lsa, faqat o'sha bo'lim yashirinadi
+  try { leaders = await fetch("data/rahbariyat.json", { cache: "no-cache" }).then(r => r.json()); } catch (e) { leaders = []; }
+  try { teachers = await fetch("data/oqituvchilar.json", { cache: "no-cache" }).then(r => r.json()); } catch (e) { teachers = []; }
   try { news = await fetch("data/news.json", { cache: "no-cache" }).then(r => r.json()); news = news.filter(p => (p.text || "").trim()); } catch (e) { news = []; }
   if (school) {
     const tg = "https://t.me/" + school.telegram;
