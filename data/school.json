@@ -36,16 +36,17 @@
   "perks": [
    "Uzoq hududlardan kelgan o'quvchilar uchun bepul zamonaviy yotoqxona",
    "Kuniga 5 mahal bepul ovqat (yotoqxonada yashovchilar uchun)",
-   "12 xil to'garakka bepul qatnashish",
+   "Bir nechta to'garaklarga bepul qatnashish",
    "Turli sport tadbirlarida ishtirok etish",
-   "Maxsus maktab formasi",
+   "Maktab formasi beriladi (xarajatning bir qismini ota-onalar to'laydi)",
    "Matematika, fizika, ingliz tili, tarix, biologiya va kimyo chuqurlashtirilgan",
    "Yuqori sifatli optik internet",
-   "Bepul darsliklar",
+   "Darsliklar bilan ta'minlanadi",
    "SAT va IELTS imtihonlariga ixtisoslashgan o'qituvchilar tayyorlaydi",
    "Zamonaviy, keng kutubxona",
    "Zamonaviy bilimga ega yuqori malakali o'qituvchilar",
-   "O'qishda yuqori natija va xalqaro sertifikatga ega o'quvchilar O'zbekiston va xorijdagi oliygohlarga muddatidan oldin kirish imkoniga ega"
+   "O'qishda yuqori natija va xalqaro sertifikatga ega o'quvchilar O'zbekiston va xorijdagi oliygohlarga muddatidan oldin kirish imkoniga ega",
+   "Hozirgacha barcha bitiruvchilarimiz talabalik baxtiga muyassar bo'lgan"
   ],
   "admission": {
    "grades": "5-sinf — aniq fanlar yo'nalishi; 7-sinf — tabiiy fanlar yo'nalishi",
@@ -95,16 +96,17 @@
   "perks": [
    "Free modern dormitory for students from distant areas",
    "Five free meals a day (for dormitory students)",
-   "Free access to 12 different clubs",
+   "Free access to several clubs",
    "Various sports activities",
-   "School uniform provided",
+   "School uniform provided (parents cover part of the cost)",
    "Advanced mathematics, physics, English, history, biology and chemistry",
    "High-speed fiber internet",
-   "Free textbooks",
+   "Textbooks provided",
    "Specialized teachers prepare students for SAT and IELTS",
    "A modern, spacious library",
    "Highly qualified teachers with modern expertise",
-   "Students with top results and international certificates can gain early admission to universities in Uzbekistan and abroad"
+   "Students with top results and international certificates can gain early admission to universities in Uzbekistan and abroad",
+   "To date, every one of our graduates has been admitted to university"
   ],
   "admission": {
    "grades": "Grade 5 — exact sciences; grade 7 — natural sciences",
