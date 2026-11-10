@@ -424,3 +424,5 @@ section[id]{scroll-margin-top:96px}
 .lb-close{top:16px;right:16px}
 .lb-prev{left:16px}.lb-next{right:16px}
 .lb-close:hover,.lb-nav:hover{background:rgba(255,255,255,.25)}
+.gallery:not(.open) .g-item:nth-child(n+11){display:none}
+.g-more{text-align:center;margin-top:24px}
