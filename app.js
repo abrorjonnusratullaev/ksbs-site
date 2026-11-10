@@ -2,7 +2,7 @@
 const UI = {
   uz: {
     "nav.about": "Maktab haqida", "nav.teachers": "O'qituvchilar", "nav.news": "Yangiliklar", "nav.contact": "Aloqa",
-    "nav.admission": "Qabul", "hero.contact": "Bog'lanish", "hero.apply": "Qabulga ariza topshirish", "gallery.title": "Maktab hayoti", "nav.gallery": "Galereya", "gallery.more": "Ko'proq ko'rsatish", "perks.title": "O'quvchilar uchun imkoniyatlar",
+    "nav.admission": "Qabul", "hero.contact": "Bog'lanish", "hero.apply": "Qabulga ariza topshirish", "gallery.title": "Maktab hayoti", "nav.gallery": "Galereya", "lead.title": "Rahbariyat", "gallery.more": "Ko'proq ko'rsatish", "perks.title": "O'quvchilar uchun imkoniyatlar",
     "video.caption": "Maktab bilan tanishtiruv videosi", "video.watch": "YouTube'da ko'rish ↗", "video.play": "Videoni ko'rish", "video.soon": "Tanishtiruv videosi tez orada",
     "adm.grades": "Qabul sinflari", "adm.period": "Ariza topshirish", "adm.docs": "Kerakli hujjatlar", "adm.call": "Call-markaz",
     "teachers.empty": "O'qituvchilar haqidagi ma'lumotlar tez orada joylanadi.",
@@ -14,7 +14,7 @@ const UI = {
   },
   en: {
     "nav.about": "About", "nav.teachers": "Teachers", "nav.news": "News", "nav.contact": "Contact",
-    "nav.admission": "Admission", "hero.contact": "Contact us", "hero.apply": "Apply for admission", "gallery.title": "School life", "nav.gallery": "Gallery", "gallery.more": "Show more", "perks.title": "What students get",
+    "nav.admission": "Admission", "hero.contact": "Contact us", "hero.apply": "Apply for admission", "gallery.title": "School life", "nav.gallery": "Gallery", "lead.title": "Leadership", "gallery.more": "Show more", "perks.title": "What students get",
     "video.caption": "An introduction to our school", "video.watch": "Watch on YouTube ↗", "video.play": "Watch the video", "video.soon": "Introduction video coming soon",
     "adm.grades": "Entry grades", "adm.period": "Applications", "adm.docs": "Required documents", "adm.call": "Call center",
     "teachers.empty": "Information about our teachers will be published soon.",
@@ -59,6 +59,13 @@ function teacherHTML(t) {
     ${L.subject ? `<div class="subj">${esc(L.subject)}</div>` : ""}${L.info ? `<div class="info">${esc(L.info)}</div>` : ""}</div></article>`;
 }
 
+function leaderHTML(t) {
+  const L = t[lang] || t.uz || {};
+  const pic = t.photo ? `<img src="${esc(t.photo)}" alt="${esc(L.name)}" loading="lazy">` : esc(initials(L.name || ""));
+  return `<article class="leader"><div class="avatar">${pic}</div><div><div class="role">${esc(L.role || "")}</div>
+    <h4>${esc(L.name || "")}</h4>${L.edu ? `<p>${esc(L.edu)}</p>` : ""}</div></article>`;
+}
+
 function postHTML(n) {
   const text = n["text_" + lang] || n.text || "";
   const lines = text.split("\n").filter(l => l.trim());
@@ -101,6 +108,9 @@ function render() {
     [u["adm.docs"], `<ul>${(A.docs || []).map(d => `<li>${esc(d)}</li>`).join("")}</ul>`]]
     .map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join("");
   if (!school.intro_video) $("#video-box").innerHTML = `<div class="video-ph"><span class="play"></span><span>${u["video.soon"]}</span></div>`;
+  const LD = school.leadership || [];
+  $("#leadership").hidden = !LD.length;
+  $("#leader-list").innerHTML = LD.map(leaderHTML).join("");
   $("#teacher-list").innerHTML = school.teachers.length ? school.teachers.map(teacherHTML).join("") : `<p class="empty">${u["teachers.empty"]}</p>`;
   $("#contact-list").innerHTML = contactRows(S, u);
 }
