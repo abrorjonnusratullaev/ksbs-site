@@ -458,8 +458,8 @@ section[id]{scroll-margin-top:96px}
 main{position:relative}
 .atlas-side{display:none}
 @media (min-width:1500px){
-  .atlas-side{display:block;position:absolute;z-index:1;pointer-events:none;top:var(--atlas-top,100svh);bottom:0;width:210px;
-    background:url(assets/atlas-lenta.svg) center top/210px 570px repeat-y;filter:drop-shadow(0 10px 14px rgba(20,40,70,.18));-webkit-mask:linear-gradient(transparent,#000 120px,#000 calc(100% - 120px),transparent);mask:linear-gradient(transparent,#000 120px,#000 calc(100% - 120px),transparent)}
-  .atlas-side.l{left:calc((100vw - 1120px)/4 - 105px)}
-  .atlas-side.r{right:calc((100vw - 1120px)/4 - 105px);background-position:center 285px}
+  .atlas-side{display:block;position:absolute;z-index:1;pointer-events:none;top:var(--atlas-top,100svh);bottom:0;width:220px;
+    background:url(assets/atlas-lenta.webp) center top/220px 1000px repeat-y;-webkit-mask:linear-gradient(transparent,#000 120px,#000 calc(100% - 120px),transparent);mask:linear-gradient(transparent,#000 120px,#000 calc(100% - 120px),transparent)}
+  .atlas-side.l{left:calc((100vw - 1120px)/4 - 110px)}
+  .atlas-side.r{right:calc((100vw - 1120px)/4 - 110px);background-position:center 500px}
 }
