@@ -116,6 +116,14 @@ function render() {
   $("#contact-list").innerHTML = contactRows(S, u);
 }
 
+// Atlas lenta "Maktab haqida" blokidan keyin boshlanadi
+function placeAtlas() {
+  const a = document.querySelector(".about-split"), m = document.querySelector("main");
+  if (a && m) m.style.setProperty("--atlas-top", (a.offsetTop + a.offsetHeight + 40) + "px");
+}
+addEventListener("resize", placeAtlas);
+addEventListener("load", placeAtlas);
+
 async function init() {
   $("#year").textContent = new Date().getFullYear();
   try { school = await fetch("data/school.json").then(r => r.json()); } catch (e) { school = null; }
