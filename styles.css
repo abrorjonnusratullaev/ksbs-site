@@ -24,12 +24,6 @@
   --max:1120px;
   --r:12px;
 }
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
-    --paper:#0e161e; --alt:#121d27; --ink:#e8eef2; --ink-2:#a2afba; --line:#25333f;
-    --blue:#4fc3dc; --on-blue:#0e161e; --emblem:#8fb0ff; --humo:#7fa6e6; --map-land:#16222d; --map-block:#1c2b38; --map-park:#1d3a2c; --map-water:#1f4a63; --map-road:#2c3d4c; color-scheme:dark;
-  }
-}
 :root[data-theme="dark"]{
   --paper:#0e161e; --alt:#121d27; --ink:#e8eef2; --ink-2:#a2afba; --line:#25333f;
   --blue:#4fc3dc; --on-blue:#0e161e; --emblem:#8fb0ff; --humo:#7fa6e6; --map-land:#16222d; --map-block:#1c2b38; --map-park:#1d3a2c; --map-water:#1f4a63; --map-road:#2c3d4c; color-scheme:dark;
@@ -426,3 +420,24 @@ section[id]{scroll-margin-top:96px}
 .lb-close:hover,.lb-nav:hover{background:rgba(255,255,255,.25)}
 .gallery:not(.open) .g-item:nth-child(n+11){display:none}
 .g-more{text-align:center;margin-top:24px}
+
+/* ===== v10: yorug' va ochiq ranglar, to'lqinli fonlar ===== */
+:root{color-scheme:light}
+#perks{--alt:#e6f4fb}
+#admission{--alt:#fff5dc}
+#news{--alt:#eaf6f0}
+.section.alt{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='40' viewBox='0 0 240 40'%3E%3Cpath d='M0 20c30-14 90-14 120 0s90 14 120 0' fill='none' stroke='%2363b6d9' stroke-opacity='.18' stroke-width='2'/%3E%3C/svg%3E") 0 0/240px 40px repeat,var(--alt)}
+.hero.cover::before{background:linear-gradient(90deg,rgba(10,30,55,.62) 0%,rgba(10,30,55,.3) 45%,rgba(10,30,55,0) 75%),linear-gradient(0deg,rgba(10,30,55,.55) 0%,transparent 50%),linear-gradient(180deg,rgba(10,30,55,.3) 0%,transparent 22%)}
+.about-panel{background:linear-gradient(140deg,#e4f3fb 0%,#d3ecf8 55%,#fdf3d6 100%);color:var(--ink)}
+.about-panel::before{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='40' viewBox='0 0 240 40'%3E%3Cpath d='M0 20c30-14 90-14 120 0s90 14 120 0' fill='none' stroke='%2363b6d9' stroke-opacity='.18' stroke-width='2'/%3E%3C/svg%3E") 0 0/240px 40px repeat;opacity:1;mix-blend-mode:normal}
+.about-panel h2,.facility h3{color:var(--lapis)}
+.facility p{color:var(--ink-2)}
+.f-ic{color:#e0a100}
+.yt-link{color:#c62828}
+.callcenter{background:linear-gradient(140deg,#e4f3fb,#d3ecf8);color:var(--ink);border:1px solid #c5e2f1}
+.callcenter h3{color:var(--lapis)}
+.callcenter a{color:var(--lapis)}
+.callcenter .btn.primary{background:#f6c21c;border-color:#f6c21c;color:#1d1503}
+.footer{--lapis:#dcedf7;background:var(--lapis);color:var(--ink);border-top:0}
+.footer a{color:var(--lapis-ink,#143f6b)}
+.card,.post,.news-card{background:#fff}
