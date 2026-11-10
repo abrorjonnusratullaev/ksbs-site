@@ -108,7 +108,7 @@ function render() {
 async function init() {
   $("#year").textContent = new Date().getFullYear();
   try { school = await fetch("data/school.json").then(r => r.json()); } catch (e) { school = null; }
-  try { news = await fetch("data/news.json", { cache: "no-cache" }).then(r => r.json()); } catch (e) { news = []; }
+  try { news = await fetch("data/news.json", { cache: "no-cache" }).then(r => r.json()); news = news.filter(p => (p.text || "").trim()); } catch (e) { news = []; }
   if (school) {
     const tg = "https://t.me/" + school.telegram;
     $("#tg-link").href = tg;

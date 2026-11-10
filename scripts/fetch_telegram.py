@@ -106,7 +106,7 @@ def parse(page: str, channel: str):
         text = tidy(clean(t.group(1))) if t else ""
         d = re.search(r'<time[^>]*datetime="([^"]+)"', b)
         img = re.search(r"tgme_widget_message_(?:photo_wrap|video_thumb)[^>]*background-image:url\('([^']+)'\)", b)
-        if not text and not img:
+        if not text:  # matnsiz (faqat rasm/video) postlar saytga chiqmaydi
             continue
         posts.append({
             "id": post_id,
@@ -163,7 +163,8 @@ def main():
     merged = {p["id"]: p for p in old}
     for p in fresh:  # yangi ma'lumot ustun, lekin oldingi tarjimalar saqlanadi
         merged[p["id"]] = {**merged.get(p["id"], {}), **p}
-    result = sorted(merged.values(), key=lambda p: p["date"], reverse=True)[:LIMIT]
+    result = sorted((p for p in merged.values() if p.get("text")),
+                    key=lambda p: p["date"], reverse=True)[:LIMIT]
     add_translations(result)
     save_images(result)
 
