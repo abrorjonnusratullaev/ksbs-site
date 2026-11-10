@@ -134,8 +134,9 @@
   ]
  },
  "teachers": [],
- "hero_image": "assets/school-1600.jpg",
- "hero_srcset": "assets/school-960.jpg 960w, assets/school-1600.jpg 1600w, assets/school-2400.jpg 2400w",
+ "hero_image": "assets/hero-1400.jpg",
+ "hero_srcset": "assets/hero-900.jpg 900w, assets/hero-1400.jpg 1400w, assets/hero-1816.jpg 1816w",
+ "gallery": ["01","02","03","04","05","06","07","08","09","10"],
  "video_poster": "assets/video-poster.jpg",
  "map_embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3108.287488373721!2d65.78152107500533!3d38.825876350922584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f4ea9a4c96cede5%3A0x7046984f90cbcbdc!2sPrezident%20Maktabi%20Agentligiga%20qarashli%201-sonli%20ixtisoslashtirilgan%20maktab-internati!5e0!3m2!1suz!2s!4v1736783223387!5m2!1suz!2s"
 }

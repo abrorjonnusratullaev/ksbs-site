@@ -2,7 +2,7 @@
 const UI = {
   uz: {
     "nav.about": "Maktab haqida", "nav.teachers": "O'qituvchilar", "nav.news": "Yangiliklar", "nav.contact": "Aloqa",
-    "nav.admission": "Qabul", "hero.contact": "Bog'lanish", "hero.apply": "Qabulga ariza topshirish", "perks.title": "O'quvchilar uchun imkoniyatlar",
+    "nav.admission": "Qabul", "hero.contact": "Bog'lanish", "hero.apply": "Qabulga ariza topshirish", "gallery.title": "Maktab hayoti", "nav.gallery": "Galereya", "perks.title": "O'quvchilar uchun imkoniyatlar",
     "video.caption": "Maktab bilan tanishtiruv videosi", "video.watch": "YouTube'da ko'rish ↗", "video.play": "Videoni ko'rish", "video.soon": "Tanishtiruv videosi tez orada",
     "adm.grades": "Qabul sinflari", "adm.period": "Ariza topshirish", "adm.docs": "Kerakli hujjatlar", "adm.call": "Call-markaz",
     "teachers.empty": "O'qituvchilar haqidagi ma'lumotlar tez orada joylanadi.",
@@ -14,7 +14,7 @@ const UI = {
   },
   en: {
     "nav.about": "About", "nav.teachers": "Teachers", "nav.news": "News", "nav.contact": "Contact",
-    "nav.admission": "Admission", "hero.contact": "Contact us", "hero.apply": "Apply for admission", "perks.title": "What students get",
+    "nav.admission": "Admission", "hero.contact": "Contact us", "hero.apply": "Apply for admission", "gallery.title": "School life", "nav.gallery": "Gallery", "perks.title": "What students get",
     "video.caption": "An introduction to our school", "video.watch": "Watch on YouTube ↗", "video.play": "Watch the video", "video.soon": "Introduction video coming soon",
     "adm.grades": "Entry grades", "adm.period": "Applications", "adm.docs": "Required documents", "adm.call": "Call center",
     "teachers.empty": "Information about our teachers will be published soon.",
@@ -140,6 +140,16 @@ async function init() {
     if (school.hero_srcset) { const h = $("#hero-photo"); h.srcset = school.hero_srcset; h.sizes = "100vw"; }
     photo("#hero-photo", school.hero_image);
     if (school.phone) $("#call-fab").href = "tel:" + school.phone.replace(/[^\d+]/g, "");
+    const G = school.gallery || [];
+    if (!G.length) $("#gallery").hidden = true;
+    $("#gallery-grid").innerHTML = G.map((g, i) => `<button type="button" class="g-item" data-i="${i}"><img src="assets/gallery/${esc(g)}-s.jpg" alt="" loading="lazy"></button>`).join("");
+    const lb = $("#lightbox"), lbImg = lb.querySelector("img"); let cur = 0;
+    const show = i => { cur = (i + G.length) % G.length; lbImg.src = `assets/gallery/${G[cur]}.jpg`; lb.hidden = false; };
+    $("#gallery-grid").addEventListener("click", e => { const b = e.target.closest(".g-item"); if (b) show(+b.dataset.i); });
+    lb.querySelector(".lb-prev").onclick = e => { e.stopPropagation(); show(cur - 1); };
+    lb.querySelector(".lb-next").onclick = e => { e.stopPropagation(); show(cur + 1); };
+    lb.addEventListener("click", e => { if (e.target === lb || e.target.classList.contains("lb-close")) lb.hidden = true; });
+    addEventListener("keydown", e => { if (lb.hidden) return; if (e.key === "Escape") lb.hidden = true; if (e.key === "ArrowRight") show(cur + 1); if (e.key === "ArrowLeft") show(cur - 1); });
     const socials = [
       ["tg", "Telegram", tg, "@" + school.telegram],
       ["ig", "Instagram", "https://www.instagram.com/" + school.instagram, "@" + school.instagram],
