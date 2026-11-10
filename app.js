@@ -136,8 +136,9 @@ async function init() {
     }
     // Rasm yuklansagina ko'rsatiladi; yuklanmasa avvalgi ko'rinish qoladi.
     const photo = (sel, src, onShow) => { if (!src) return; const im = $(sel); im.onload = () => { im.hidden = false; onShow && onShow(); }; im.src = src; };
+    // Ekran o'lchamiga mos rasm: brauzer kerakli hajmdagisini o'zi tanlaydi.
+    if (school.hero_srcset) { const h = $("#hero-photo"); h.srcset = school.hero_srcset; h.sizes = "100vw"; }
     photo("#hero-photo", school.hero_image);
-    photo("#hero-blur", school.hero_image);
     if (school.phone) $("#call-fab").href = "tel:" + school.phone.replace(/[^\d+]/g, "");
     const socials = [
       ["tg", "Telegram", tg, "@" + school.telegram],
