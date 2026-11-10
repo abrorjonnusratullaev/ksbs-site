@@ -453,35 +453,3 @@ section[id]{scroll-margin-top:96px}
 .leader h4{margin:0 0 4px;font:700 1.12rem/1.3 var(--f-body);color:var(--ink)}
 .leader p{margin:0;color:var(--ink-2);font-size:14.5px;line-height:1.5}
 @media (max-width:560px){.leaders{grid-template-columns:minmax(0,1fr)}.leader{grid-template-columns:60px minmax(0,1fr);padding:16px}.leader .avatar{width:60px;height:60px;font-size:1.2rem}}
-
-/* ===== v11: o'zbek ruhi — atlas (ikat) naqshi, bodom motivi, Registon firuzasi va Ark g'ishti ranglari ===== */
-:root{--paper:#fbf7ef;--ink:#1b2a33;--ink-2:#5d6670;--line:#e6dccb;--blue:#0f6b74;--teal:#0f5560;--sand:#f3e7d3;--tile:#e2efec;--gold-ui:#e3ad3a}
-body{background:var(--paper)}
-#perks{--alt:var(--sand)}
-#admission{--alt:var(--tile)}
-#news{--alt:#f6ecdc}
-.section.alt{background:url(assets/bodom-faint.svg) right -60px top 40px/300px 300px no-repeat,url(assets/bodom-faint.svg) left -90px bottom 10px/240px 240px no-repeat,var(--alt)}
-.title-wave,.section h2::after{color:#c08a2e}
-/* Maktab haqida: Registon firuzasi + atlas */
-.about-panel{background:linear-gradient(rgba(13,82,92,.93),rgba(13,82,92,.93)),url(assets/atlas.svg) 0 0/160px 200px;color:#fff}
-.about-panel::before{background:url(assets/atlas.svg) 0 0/40px 50px repeat-y;opacity:1;inset:0 auto 0 0;width:40px;mix-blend-mode:normal}
-.about-panel-in{padding-left:max(64px,5vw)}
-.about-panel h2{color:#fff}
-.facility h3{color:#f6d27a}
-.facility p{color:rgba(255,255,255,.82)}
-.f-ic{color:#f6d27a}
-.yt-link{color:#f6d27a}
-/* Call center: firuza karta, tepasida atlas lenta */
-.callcenter{background:url(assets/atlas.svg) 0 0/32px 40px repeat-x,var(--teal);color:#f3e7d3;border:0;padding-top:64px}
-.callcenter h3,.callcenter a{color:#fff}
-.callcenter .btn.primary{background:var(--gold-ui);border-color:var(--gold-ui);color:#1d1503}
-/* Footer: atlas lenta + firuza */
-.footer{--lapis:var(--teal);background:url(assets/atlas.svg) 0 0/32px 40px repeat-x,var(--teal);color:#f3e7d3;padding-top:62px}
-.footer a{color:#fff}
-/* Rahbariyat va o'qituvchilar */
-.leader{background:#fffdf8;border-color:var(--line)}
-#leader-list .leader:first-child{background:url(assets/bodom-faint.svg) right -30px center/180px 180px no-repeat,linear-gradient(120deg,var(--sand),var(--tile));border-color:#e0d2b8}
-.leader .avatar{background:radial-gradient(circle at 30% 30%,#fff7e6,#f0dcb6);color:var(--teal);box-shadow:inset 0 0 0 2px #e3ad3a55}
-.leader .role{color:var(--blue)}
-.perk,.post,.card{background:#fffdf8}
-.g-more .btn{border-color:#d9c7a6}
