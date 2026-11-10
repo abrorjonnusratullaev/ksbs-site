@@ -10,7 +10,10 @@ import urllib.parse
 import urllib.request
 from pathlib import Path
 
-OUT = Path(__file__).resolve().parent.parent / "data" / "news.json"
+ROOT = Path(__file__).resolve().parent.parent
+OUT = ROOT / "data" / "news.json"
+IMG_DIR = ROOT / "assets" / "news"   # rasmlar saytning o'zida saqlanadi (Telegram havolalari vaqt o'tib eskiradi)
+KEEP_IMAGES = 12                     # faqat oxirgi 12 ta post rasmi saqlanadi (joy tejash uchun)
 LIMIT = 30
 SKIP_FORWARDS = True  # boshqa kanallardan forward qilingan postlarni saytga chiqarmaslik
 CUT_MARKERS = ["Ijtimoiy tarmoqlarda bizni kuzating", "Ijtimoiy tarmoqlarimizga obuna"]
@@ -115,6 +118,33 @@ def parse(page: str, channel: str):
     return posts
 
 
+def save_images(posts):
+    """Post rasmlarini assets/news/ ga yuklab oladi va post["photo"] ga mahalliy yo'lni yozadi."""
+    IMG_DIR.mkdir(parents=True, exist_ok=True)
+    keep = set()
+    for p in posts[:KEEP_IMAGES]:
+        url = p.get("image", "")
+        if not url:
+            continue
+        name = re.sub(r"\W", "_", p["id"].split("/")[-1]) + ".jpg"
+        path = IMG_DIR / name
+        if not path.exists():
+            try:
+                data = urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=30).read()
+                if len(data) > 1000:
+                    path.write_bytes(data)
+            except Exception as e:  # rasm yuklanmasa, keyingi safar yana urinib ko'riladi
+                print("Rasm yuklanmadi:", p["id"], e)
+        if path.exists():
+            p["photo"] = f"assets/news/{name}"
+            keep.add(name)
+    for f in IMG_DIR.glob("*.jpg"):  # eski rasmlarni o'chirish
+        if f.name not in keep:
+            f.unlink()
+    for p in posts[KEEP_IMAGES:]:
+        p.pop("photo", None)
+
+
 def main():
     channel = sys.argv[1].lstrip("@") if len(sys.argv) > 1 else ""
     if not channel or channel == "MAKTAB_KANALI":
@@ -135,6 +165,7 @@ def main():
         merged[p["id"]] = {**merged.get(p["id"], {}), **p}
     result = sorted(merged.values(), key=lambda p: p["date"], reverse=True)[:LIMIT]
     add_translations(result)
+    save_images(result)
 
     OUT.write_text(json.dumps(result, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"{len(fresh)} ta post olindi, jami {len(result)} ta saqlandi.")

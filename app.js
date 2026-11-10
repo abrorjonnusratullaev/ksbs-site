@@ -63,7 +63,8 @@ function postHTML(n) {
   const text = n["text_" + lang] || n.text || "";
   const lines = text.split("\n").filter(l => l.trim());
   const title = lines.shift() || "";
-  const img = n.image ? `<img class="ph" src="${esc(n.image)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">` : "";
+  const src = n.photo || n.image;
+  const img = src ? `<img class="ph" src="${esc(src)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">` : "";
   return `<article class="post">${img}<div class="pb">${n.date ? `<time datetime="${esc(n.date)}">${esc(fmtDate(n.date))}</time>` : ""}
     <h3>${esc(title)}</h3>${lines.length ? `<p>${esc(lines.join("\n"))}</p>` : ""}
     <a class="more" href="${esc(n.link)}" target="_blank" rel="noopener">${UI[lang]["news.more"]}</a></div></article>`;
@@ -136,6 +137,7 @@ async function init() {
     // Rasm yuklansagina ko'rsatiladi; yuklanmasa avvalgi ko'rinish qoladi.
     const photo = (sel, src, onShow) => { if (!src) return; const im = $(sel); im.onload = () => { im.hidden = false; onShow && onShow(); }; im.src = src; };
     photo("#hero-photo", school.hero_image);
+    photo("#hero-blur", school.hero_image);
     if (school.phone) $("#call-fab").href = "tel:" + school.phone.replace(/[^\d+]/g, "");
     const socials = [
       ["tg", "Telegram", tg, "@" + school.telegram],
