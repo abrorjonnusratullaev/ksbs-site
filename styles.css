@@ -454,3 +454,6 @@ h2::after{display:none}
 #leader-list .leader{grid-template-columns:112px minmax(0,1fr);padding:22px 24px}
 #leader-list .leader .avatar{width:112px;height:112px}
 @media (max-width:560px){#leader-list .leader{grid-template-columns:84px minmax(0,1fr)}#leader-list .leader .avatar{width:84px;height:84px}}
+.leader .mail{display:inline-block;margin-top:6px;font-size:14px;color:var(--blue);text-decoration:none;word-break:break-all}
+.leader .mail:hover{text-decoration:underline}
+.mail-note{display:block;color:var(--ink-2);font-size:13.5px;margin-top:2px}

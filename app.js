@@ -64,7 +64,7 @@ function leaderHTML(t) {
   const src = t.rasm ? (t.rasm.includes("/") ? t.rasm : "assets/odamlar/" + t.rasm) : "";
   const pic = src ? `<img src="${esc(src)}" alt="${esc(name)}" loading="lazy">` : esc(initials(name));
   return `<article class="leader"><div class="avatar">${pic}</div><div><div class="role">${esc(L.lavozim || "")}</div>
-    <h4>${esc(name)}</h4>${L.malumot ? `<p>${esc(L.malumot)}</p>` : ""}</div></article>`;
+    <h4>${esc(name)}</h4>${L.malumot ? `<p>${esc(L.malumot)}</p>` : ""}${t.pochta ? `<a class="mail" href="mailto:${esc(t.pochta)}">${esc(t.pochta)}</a>` : ""}</div></article>`;
 }
 
 function postHTML(n) {
@@ -81,7 +81,8 @@ function postHTML(n) {
 function contactRows(S, u) {
   const rows = [[u["contact.address"], esc(S.address)], [u["contact.hours"], esc(S.hours)]];
   if (school.phone) rows.push([u["contact.phone"], `<a href="tel:${esc(school.phone.replace(/[^\d+]/g, ""))}">${esc(school.phone)}</a>`]);
-  if (school.email) rows.push([u["contact.email"], `<a href="mailto:${esc(school.email)}">${esc(school.email)}</a>`]);
+  const mails = school.emails || (school.email ? [{ manzil: school.email }] : []);
+  mails.forEach(m => rows.push([u["contact.email"], `<a href="mailto:${esc(m.manzil)}">${esc(m.manzil)}</a>${m[lang] ? `<small class="mail-note">${esc(m[lang])}</small>` : ""}`]));
   return rows.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join("");
 }
 

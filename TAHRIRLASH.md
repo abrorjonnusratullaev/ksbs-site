@@ -41,6 +41,8 @@ Har bir kishi shu ko'rinishdagi bitta blok:
    Fayl nomi lotincha va bo'sh joysiz bo'lsin, masalan `achilov-elbek.jpg`.
 2. O'sha kishining blokida yozing: `"rasm": "achilov-elbek.jpg",`
 
+**Pochta:** kishining blokiga `"pochta": "director@ksbs.uz",` qatorini qo'shsangiz, kartochkada pochta manzili chiqadi.
+
 Kvadrat (yoki yuz markazda bo'lgan) rasm eng yaxshi chiqadi. Rasm yo'q bo'lsa, ism bosh harflari chiqadi.
 
 ## Xato qilmaslik uchun 3 qoida

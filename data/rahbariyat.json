@@ -1,12 +1,14 @@
 [
   {
     "rasm": "oripova-nozima.jpg",
+    "pochta": "director@ksbs.uz",
     "uz": {"ism": "Oripova Nozima", "lavozim": "Maktab direktori", "malumot": "Qarshi davlat universiteti (Biologiya)"},
     "en": {"ism": "Nozima Oripova", "lavozim": "School Director", "malumot": "Karshi State University (Biology)"}
   },
   {
     "rasm": "shodmonov-oktam.jpg",
+    "pochta": "deputy@ksbs.uz",
     "uz": {"ism": "Shodmonov O'ktam Rustamovich", "lavozim": "Ma'naviy ishlar bo'yicha direktor o'rinbosari", "malumot": "Mirzo Ulug'bek nomidagi O'zbekiston Milliy universiteti, Tarix (mamlakatlar va mintaqalar bo'yicha)"},
-    "en": {"ism": "Shodmanov Oktam Rustamovich", "lavozim": "Deputy Director for Spiritual Affairs", "malumot": "M. Ulugbek National University of Uzbekistan, History (by countries and regions)"}
+    "en": {"ism": "Shodmonov Oktam Rustamovich", "lavozim": "Deputy Director for Spiritual Affairs", "malumot": "M. Ulugbek National University of Uzbekistan, History (by countries and regions)"}
   }
 ]

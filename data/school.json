@@ -7,6 +7,10 @@
  "youtube": "@qarshi1sonIMI",
  "phone": "+998 55 404 55 44",
  "email": "info@ksbs.uz",
+ "emails": [
+  {"manzil": "info@ksbs.uz", "uz": "Umumiy maktab masalalari bo'yicha", "en": "For general school matters"},
+  {"manzil": "testcenter@ksbs.uz", "uz": "Test masalalari bo'yicha", "en": "For testing matters"}
+ ],
  "map_link": "https://maps.app.goo.gl/AYoesSRtHQrrM3MV8",
  "admissions_portal": "https://ariza.piima.uz",
  "callcenter": [
