@@ -119,7 +119,7 @@ function render() {
 
 async function init() {
   $("#year").textContent = new Date().getFullYear();
-  try { school = await fetch("data/school.json").then(r => r.json()); } catch (e) { school = null; }
+  try { school = await fetch("data/school.json", { cache: "no-cache" }).then(r => r.json()); } catch (e) { school = null; }
   // Har bir ro'yxat alohida faylda: birida xato bo'lsa, faqat o'sha bo'lim yashirinadi
   try { leaders = await fetch("data/rahbariyat.json", { cache: "no-cache" }).then(r => r.json()); } catch (e) { leaders = []; }
   try { teachers = await fetch("data/oqituvchilar.json", { cache: "no-cache" }).then(r => r.json()); } catch (e) { teachers = []; }
